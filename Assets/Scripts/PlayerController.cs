@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private Camera cam;
+    private bool canJump = true;
 
     // Vitesse de mouvement du joueur
     public float speed = 5.0f;
@@ -59,9 +60,11 @@ public class PlayerController : MonoBehaviour
         }
 
         // Saut
-        if (Input.GetKeyDown(jumpKey))
+        if (Input.GetKeyDown(jumpKey) && canJump)
         {
             rb.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2.0f * Physics.gravity.y), ForceMode.VelocityChange);
+            canJump = false;
+            StartCoroutine(ResetJump());
         }
 
         // Sprint
@@ -73,5 +76,11 @@ public class PlayerController : MonoBehaviour
         {
             speed = 5.0f;
         }
+    }
+
+    IEnumerator ResetJump()
+    {
+        yield return new WaitForSeconds(2.5f);
+        canJump = true;
     }
 }
