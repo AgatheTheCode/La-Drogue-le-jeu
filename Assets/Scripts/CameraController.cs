@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Sensibilité de la souris
-    public float mouseSensitivity = 300.0f;
+    // Vitesse de rotation de la caméra
+    public float mouseSensitivity = 100.0f;
 
     // Objet que la caméra suit
     public Transform player;
