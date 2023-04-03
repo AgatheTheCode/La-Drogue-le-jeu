@@ -4,36 +4,44 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Vitesse de rotation de la caméra
+    // Sensibilité de la souris
     public float mouseSensitivity = 100.0f;
 
-    // Angle vertical maximal de la caméra
-    public float maxVerticalAngle = 90.0f;
-    // Angle vertical minimal de la caméra
-    public float minVerticalAngle = -90.0f;
-
-    // Angle vertical actuel de la caméra
-    private float verticalAngle = 0.0f;
-
     // Objet que la caméra suit
-    public GameObject cameraFollow;
+    public Transform player;
+
+    // L'angle maximal que la caméra peut atteindre
+    public float maxAngle = 90.0f;
+
+    // L'angle minimal que la caméra peut atteindre
+    public float minAngle = -90.0f;
+
+    // L'angle actuel de la caméra
+    private float currentAngle = 0.0f;
+
+    // Récupération de la position de la souris
+    private float mouseX = 0.0f;
+    private float mouseY = 0.0f;
 
     void Start()
     {
-        // Cacher le curseur de la souris
+        // Rendre le curseur invisible et verrouiller sa position
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Récupérer les mouvements de la souris
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        // Récupérer la position de la souris
+        mouseX += Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        mouseY -= Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        // Faire tourner la caméra en fonction des mouvements de la souris sur l'axe Y
-        verticalAngle -= mouseY;
-        verticalAngle = Mathf.Clamp(verticalAngle, minVerticalAngle, maxVerticalAngle);
-        transform.localRotation = Quaternion.Euler(verticalAngle, transform.localRotation.eulerAngles.y, transform.localRotation.eulerAngles.z);
+        // Limiter l'angle de la caméra
+        mouseY = Mathf.Clamp(mouseY, minAngle, maxAngle);
+
+        // Appliquer la rotation à la caméra
+        transform.eulerAngles = new Vector3(mouseY, mouseX, 0.0f);
+
+        // Appliquer la position de la caméra à l'objet suivi
+        transform.position = player.position;
     }
 }
