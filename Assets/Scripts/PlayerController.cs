@@ -5,69 +5,82 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Variables pour les touches préférées de l'utilisateur
-    public KeyCode moveUpKey = KeyCode.W;
+    public KeyCode moveUpKey = KeyCode.Z;
     public KeyCode moveDownKey = KeyCode.S;
-    public KeyCode moveLeftKey = KeyCode.A;
+    public KeyCode moveLeftKey = KeyCode.Q;
     public KeyCode moveRightKey = KeyCode.D;
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode sprintKey = KeyCode.LeftShift;
+
+    private Rigidbody rb;
+    private Camera cam;
+    private bool canJump = true;
 
     // Vitesse de mouvement du joueur
     public float speed = 5.0f;
-    // Vitesse de rotation de la caméra
-    public float mouseSensitivity = 100.0f;
+    public float sprintSpeed = 10.0f;
 
-    // Objet que la caméra suit
-    public Transform player;
+    // La hauteur maximale à laquelle le joueur peut sauter
+    public float jumpHeight = 2.0f;
 
-    // Angle vertical maximal de la caméra
-    public float maxVerticalAngle = 90.0f;
-    // Angle vertical minimal de la caméra
-    public float minVerticalAngle = -90.0f;
+    //distance du bord
+    public float edgeDistance = 1.0f;
 
-    // Angle vertical actuel de la caméra
-    private float verticalAngle = 0.0f;
+    // Le layerMask des objets solides
+    public LayerMask solidMask;
+
+    void Start()
+    {
+        //récupérer la rigidbody du joueur
+        rb = GetComponent<Rigidbody>();
+        cam = GetComponentInChildren<Camera>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        // Récupérer les mouvements de la souris
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-
-        // Faire tourner le joueur en fonction des mouvements de la souris sur l'axe X
-        player.Rotate(Vector3.up, mouseX);
-
-        // Faire tourner la caméra en fonction des mouvements de la souris sur l'axe Y
-        verticalAngle -= mouseY;
-        verticalAngle = Mathf.Clamp(verticalAngle, minVerticalAngle, maxVerticalAngle);
-        transform.localRotation = Quaternion.Euler(verticalAngle, transform.localRotation.eulerAngles.y, transform.localRotation.eulerAngles.z);
-
-        // Déplacer la caméra pour qu'elle suive le joueur
-        transform.position = player.position;
         // Mouvement en avant et en arrière
         if (Input.GetKey(moveUpKey))
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            transform.position += cam.transform.forward * Time.deltaTime * speed;
         }
         if (Input.GetKey(moveDownKey))
         {
-            transform.Translate(Vector3.back * Time.deltaTime * speed);
+            transform.position -= cam.transform.forward * Time.deltaTime * speed;
         }
 
         // Mouvement latéral
         if (Input.GetKey(moveLeftKey))
         {
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
+            transform.position -= cam.transform.right * Time.deltaTime * speed;
         }
         if (Input.GetKey(moveRightKey))
         {
-            transform.Translate(Vector3.right * Time.deltaTime * speed);
+            transform.position += cam.transform.right * Time.deltaTime * speed;
         }
 
         // Saut
-        if (Input.GetKeyDown(jumpKey))
+        if (Input.GetKeyDown(jumpKey) && canJump)
         {
-            transform.Translate(Vector3.up * speed);
+            rb.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2.0f * Physics.gravity.y), ForceMode.VelocityChange);
+            canJump = false;
+            StartCoroutine(ResetJump());
         }
+
+        // Sprint
+        if (Input.GetKey(sprintKey))
+        {
+            speed = sprintSpeed;
+        }
+        else
+        {
+            speed = 5.0f;
+        }
+    }
+
+    IEnumerator ResetJump()
+    {
+        yield return new WaitForSeconds(2.5f);
+        canJump = true;
     }
 }
