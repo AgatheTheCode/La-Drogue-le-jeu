@@ -25,9 +25,6 @@ public class PlayerController : MonoBehaviour
     // Le layerMask des objets solides
     public LayerMask solidMask;
 
-    // Objet que la caméra suit
-    public Transform player;
-
     void Start()
     {
         //récupérer la rigidbody du joueur
