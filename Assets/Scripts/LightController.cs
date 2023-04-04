@@ -5,6 +5,7 @@ public class LightController : MonoBehaviour
     public Light pointLight;
     public Color activeColor = Color.green;
     public Color inactiveColor = Color.red;
+    public float maxDistance = 5f;
 
     private bool isLightOn = true;
 
@@ -23,43 +24,28 @@ public class LightController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if ((hit.collider.gameObject == gameObject) || (isLightOn = false))
+                Debug.Log("Hit: " + hit.collider.gameObject.name);
+                Debug.Log("Distance: " + hit.distance);
+                if ((hit.distance < maxDistance))
                 {
-                    // Allumer ou éteindre la lumière
-                    ToggleLight();
-                }
-                else
+                    if (hit.distance < maxDistance)
+                    {
+                        if (hit.collider.gameObject == gameObject && !isLightOn)
+                        {
+                            // Allumer la lumière
+                            TurnOnLight();
+                        }
+                        else if (hit.collider.gameObject == gameObject && isLightOn)
+                        {
+                            // Éteindre la lumière
+                            TurnOffLight();
+                        }
+                    }
+                } else
                 {
-                    // Éteindre la lumière
-                    TurnOffLight();
+                    Debug.Log("Trop loin");
                 }
             }
-        }
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        // Vérifier si le joueur entre dans la zone de déclenchement et regarde l'interrupteur
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Vector3 direction = other.transform.position - transform.position;
-            float angle = Vector3.Angle(transform.forward, direction);
-
-            if (angle < 45)
-            {
-                // Allumer la lumière
-                TurnOnLight();
-            }
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        // Vérifier si le joueur quitte la zone de déclenchement
-        if (other.gameObject.CompareTag("Player"))
-        {
-            // Éteindre la lumière
-            TurnOffLight();
         }
     }
 
