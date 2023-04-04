@@ -9,12 +9,17 @@ public class Switch : MonoBehaviour
     public LayerMask raycastLayerMask = -1;
     public Color raycastColor = Color.blue;
 
-    private bool isActivated = false;
-
-    private void Update()
+public bool isActivated { get; set; } = false;
+    public void Start()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
+        //récupération des objets qui ont le tag SWITCHED
+        objectToActivate = GameObject.FindGameObjectWithTag("switched");
+        SetSwitchColor();
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))    {
             Debug.Log('E');
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, raycastDistance, raycastLayerMask))
@@ -29,13 +34,13 @@ public class Switch : MonoBehaviour
         }
     }
 
-    private void SetSwitchColor()
+    public void SetSwitchColor()
     {
         Renderer switchRenderer = GetComponent<Renderer>();
         switchRenderer.material.color = isActivated ? activeColor : inactiveColor;
     }
 
-    private void OnDrawGizmos()
+    public void OnDrawGizmos()
     {
         Gizmos.color = raycastColor;
         Gizmos.DrawLine(transform.position, transform.position + transform.forward * raycastDistance);

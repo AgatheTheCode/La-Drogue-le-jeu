@@ -11,7 +11,7 @@ public class ShootRayCast : MonoBehaviour
 
     private Camera playerCamera;
 
-    void Start()
+    public void Start()
     {
         playerCamera = GetComponentInChildren<Camera>();
 
@@ -26,7 +26,7 @@ public class ShootRayCast : MonoBehaviour
         aimPoint.transform.SetParent(playerCamera.transform);
     }
 
-    void Update()
+    public void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
@@ -42,6 +42,16 @@ public class ShootRayCast : MonoBehaviour
                 if (renderer != null)
                 {
                     renderer.material.color = Color.red;
+                }
+                //si l'objet a pour tag "Switch"
+                if (hitInfo.collider.CompareTag("switch"))
+                {
+                    //on récupère le script Switch
+                    Switch switchScript = hitInfo.collider.GetComponent<Switch>();
+                    //on active/désactive l'objet
+                    switchScript.isActivated = !switchScript.isActivated;
+                    switchScript.SetSwitchColor();
+                    switchScript.objectToActivate.SetActive(switchScript.isActivated);
                 }
             }
         }
