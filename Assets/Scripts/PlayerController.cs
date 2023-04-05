@@ -12,6 +12,12 @@ public class PlayerController : MonoBehaviour
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode sprintKey = KeyCode.LeftShift;
 
+    // Variables pour les entrées de la manette
+    public string joystickHorizontalAxis = "Horizontal";
+    public string joystickVerticalAxis = "Vertical";
+    public string joystickJumpButton = "Jump";
+    public string joystickSprintButton = "Fire3";
+
     private Rigidbody rb;
     private Camera cam;
     private bool canJump = true;
@@ -39,36 +45,38 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Mouvement en avant et en arrière
-        if (Input.GetKey(moveUpKey))
+        // Mouvement en avant et en arrière (clavier ou manette)
+        float verticalInput = Input.GetAxis(joystickVerticalAxis);
+        if (Input.GetKey(moveUpKey) || verticalInput > 0)
         {
             transform.position += cam.transform.forward * Time.deltaTime * speed;
         }
-        if (Input.GetKey(moveDownKey))
+        if (Input.GetKey(moveDownKey) || verticalInput < 0)
         {
             transform.position -= cam.transform.forward * Time.deltaTime * speed;
         }
 
-        // Mouvement latéral
-        if (Input.GetKey(moveLeftKey))
+        // Mouvement latéral (clavier ou manette)
+        float horizontalInput = Input.GetAxis(joystickHorizontalAxis);
+        if (Input.GetKey(moveLeftKey) || horizontalInput < 0)
         {
             transform.position -= cam.transform.right * Time.deltaTime * speed;
         }
-        if (Input.GetKey(moveRightKey))
+        if (Input.GetKey(moveRightKey) || horizontalInput > 0)
         {
             transform.position += cam.transform.right * Time.deltaTime * speed;
         }
 
-        // Saut
-        if (Input.GetKeyDown(jumpKey) && canJump)
+        // Saut (clavier ou manette)
+        if ((Input.GetKeyDown(jumpKey) || Input.GetButtonDown(joystickJumpButton)) && canJump)
         {
             rb.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2.0f * Physics.gravity.y), ForceMode.VelocityChange);
             canJump = false;
             StartCoroutine(ResetJump());
         }
 
-        // Sprint
-        if (Input.GetKey(sprintKey))
+        // Sprint (clavier ou manette)
+        if (Input.GetKey(sprintKey) || Input.GetButton(joystickSprintButton))
         {
             speed = sprintSpeed;
         }
