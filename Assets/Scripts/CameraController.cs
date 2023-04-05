@@ -34,6 +34,11 @@ public class CameraController : MonoBehaviour
         // Récupérer la position de la souris
         mouseX += Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         mouseY -= Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+    
+        // Ajouter le mouvement de la caméra avec le joystick droit de la manette Xbox
+        mouseX += Input.GetAxis("RightStickHorizontal") * mouseSensitivity * Time.deltaTime;
+        mouseY -= Input.GetAxis("RightStickVertical") * mouseSensitivity * Time.deltaTime;
+        Debug.Log(Input.GetAxis("RightStickHorizontal"));
 
         // Limiter l'angle de la caméra
         mouseY = Mathf.Clamp(mouseY, minAngle, maxAngle);
@@ -44,4 +49,6 @@ public class CameraController : MonoBehaviour
         // Appliquer la position de la caméra à l'objet suivi
         transform.position = player.position;
     }
+
 }
+
