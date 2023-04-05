@@ -3,7 +3,17 @@ guid: accb62c44526a44738c6a56692d6cbe8
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Potion
+    second: {fileID: 2100000, guid: ad4077a94fc084120b29490f606edfe4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Verre
+    second: {fileID: 2100000, guid: 17c07c693269a4db596cc471f219b2db, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
