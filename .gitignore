@@ -58,6 +58,9 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+# Asset
+SyntyStudios
+
 # Crashlytics generated file
 crashlytics-build.properties
 #ignore le dossier texture
