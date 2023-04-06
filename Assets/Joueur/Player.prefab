@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 8532739563713389489}
   - component: {fileID: 1767995002662216813}
   - component: {fileID: 6147311464081024836}
-  - component: {fileID: 8689947331947898653}
   m_Layer: 0
   m_Name: PlayerMeshe
   m_TagString: Untagged
@@ -137,6 +136,10 @@ MonoBehaviour:
   moveRightKey: 100
   jumpKey: 32
   sprintKey: 304
+  joystickHorizontalAxis: Horizontal
+  joystickVerticalAxis: Vertical
+  joystickJumpButton: Jump
+  joystickSprintButton: Fire3
   speed: 5
   sprintSpeed: 10
   jumpHeight: 2
@@ -156,37 +159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98140657f3a54c44caceb6b8e35c168b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveHorizontalAxis: LeftStickHorizontal
-  moveVerticalAxis: LeftStickVertical
-  lookHorizontalAxis: RightStickHorizontal
-  lookVerticalAxis: RightStickVertical
-  jumpKey: 350
-  replaceKey: 352
-  speed: 5
-  sprintSpeed: 10
-  jumpHeight: 2
-  edgeDistance: 1
-  solidMask:
-    serializedVersion: 2
-    m_Bits: 0
---- !u!114 &8689947331947898653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2455080658320697051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98140657f3a54c44caceb6b8e35c168b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveHorizontalAxis: LeftStickHorizontal
-  moveVerticalAxis: LeftStickVertical
-  lookHorizontalAxis: RightStickHorizontal
-  lookVerticalAxis: RightStickVertical
-  jumpKey: 350
-  replaceKey: 352
   speed: 5
   sprintSpeed: 10
   jumpHeight: 2
