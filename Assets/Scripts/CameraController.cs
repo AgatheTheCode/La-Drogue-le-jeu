@@ -38,7 +38,6 @@ public class CameraController : MonoBehaviour
         // Ajouter le mouvement de la caméra avec le joystick droit de la manette Xbox
         mouseX += Input.GetAxis("RightStickHorizontal") * mouseSensitivity * Time.deltaTime;
         mouseY -= Input.GetAxis("RightStickVertical") * mouseSensitivity * Time.deltaTime;
-        Debug.Log(Input.GetAxis("RightStickHorizontal"));
 
         // Limiter l'angle de la caméra
         mouseY = Mathf.Clamp(mouseY, minAngle, maxAngle);

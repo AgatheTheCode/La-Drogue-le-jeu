@@ -35,11 +35,13 @@ public class XboxMapping : MonoBehaviour
         float verticalAxis = Input.GetAxis("Vertical");
         if (verticalAxis > 0)
         {
-            transform.position += cam.transform.forward * Time.deltaTime * speed * verticalAxis;
+            Vector3 forward = new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z).normalized;
+            transform.position += forward * Time.deltaTime * speed * verticalAxis;
         }
         else if (verticalAxis < 0)
         {
-            transform.position -= cam.transform.forward * Time.deltaTime * speed * Mathf.Abs(verticalAxis);
+            Vector3 forward = new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z).normalized;
+            transform.position -= forward * Time.deltaTime * speed * Mathf.Abs(verticalAxis);
         }
 
         // Mouvement latéral
@@ -52,9 +54,6 @@ public class XboxMapping : MonoBehaviour
         {
             transform.position += cam.transform.right * Time.deltaTime * speed * horizontalAxis;
         }
-
-        // Mouvement de la caméra avec le joystick droit
-        
 
         // Saut
         if (Input.GetButtonDown("Jump") && canJump)

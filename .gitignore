@@ -67,3 +67,5 @@ crashlytics-build.properties
 Assets/Textures/
 #ignore usersettings
 usersettings/
+ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json
+ProjectSettings/Packages/com.unity.probuilder/Settings.json

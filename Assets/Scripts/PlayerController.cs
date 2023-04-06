@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
     // Variables pour les touches préférées de l'utilisateur
@@ -46,26 +47,32 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Mouvement en avant et en arrière (clavier ou manette)
-        float verticalInput = Input.GetAxis(joystickVerticalAxis);
-        if (Input.GetKey(moveUpKey) || verticalInput > 0)
-        {
-            transform.position += cam.transform.forward * Time.deltaTime * speed;
-        }
-        if (Input.GetKey(moveDownKey) || verticalInput < 0)
-        {
-            transform.position -= cam.transform.forward * Time.deltaTime * speed;
-        }
+    float verticalInput = Input.GetAxis(joystickVerticalAxis);
+    if (Input.GetKey(moveUpKey) || verticalInput > 0)
+    {
+        Vector3 forward = new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z).normalized;
+        transform.position += forward * Time.deltaTime * speed;
+    }
+    if (Input.GetKey(moveDownKey) || verticalInput < 0)
+    {
+        Vector3 forward = new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z).normalized;
+        transform.position -= forward * Time.deltaTime * speed;
+        Debug.Log(forward);
+    }
 
-        // Mouvement latéral (clavier ou manette)
-        float horizontalInput = Input.GetAxis(joystickHorizontalAxis);
-        if (Input.GetKey(moveLeftKey) || horizontalInput < 0)
-        {
-            transform.position -= cam.transform.right * Time.deltaTime * speed;
-        }
-        if (Input.GetKey(moveRightKey) || horizontalInput > 0)
-        {
-            transform.position += cam.transform.right * Time.deltaTime * speed;
-        }
+    // Mouvement latéral (clavier ou manette)
+    float horizontalInput = Input.GetAxis(joystickHorizontalAxis);
+    if (Input.GetKey(moveLeftKey) || horizontalInput < 0)
+    {
+        Vector3 right = new Vector3(cam.transform.right.x, 0, cam.transform.right.z).normalized;
+        transform.position -= right * Time.deltaTime * speed;
+    }
+    if (Input.GetKey(moveRightKey) || horizontalInput > 0)
+    {
+        Vector3 right = new Vector3(cam.transform.right.x, 0, cam.transform.right.z).normalized;
+        transform.position += right * Time.deltaTime * speed;
+    }
+
 
         // Saut (clavier ou manette)
         if ((Input.GetKeyDown(jumpKey) || Input.GetButtonDown(joystickJumpButton)) && canJump)
