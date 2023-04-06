@@ -66,6 +66,11 @@ crashlytics-build.properties
 #ignore le dossier texture
 Assets/Textures/
 #ignore usersettings
-usersettings/
+UserSettings/
 ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json
 ProjectSettings/Packages/com.unity.probuilder/Settings.json
+
+ProjectSettings/Packages/com.unity.probuilder/
+
+ProjectSettings/
+
