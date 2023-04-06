@@ -1,116 +1,130 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuSelector : MonoBehaviour
 {
-    public GameObject CanvaMenu;
-    public GameObject CanvaScene;
-    public GameObject firstCanvas;
-    public GameObject secondCanvas;
-    public GameObject thirdCanvas;
+    public GameObject canvas1;
+    public GameObject canvas2;
+    public GameObject canvas3;
 
-    private bool isFirstCanvasShown = true;
-    private bool isSecondCanvasShown = false;
-    private bool isThirdCanvasShown = false;
+    private bool isCanvas1Shown = true;
+    private bool isCanvas2Shown = false;
+    private bool isCanvas3Shown = false;
 
-    private void Start()
+    private string sceneName = "Scene1";
+    private string sceneName2 = "Scene2";
+    private string sceneName3 = "Scene3";
+    private string sceneName4 = "Scene4";
+
+    void Start()
     {
-        firstCanvas.SetActive(false);
-        secondCanvas.SetActive(false);
-        thirdCanvas.SetActive(false);
     }
-    private void Update()
+
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (firstCanvas.activeSelf)
+            Debug.Log("escape");
+            // Si les trois canvas sont visibles, on les cache tous
+            if (isCanvas1Shown || isCanvas2Shown || isCanvas3Shown)
             {
-                firstCanvas.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked;
+                canvas1.SetActive(false);
+                canvas2.SetActive(false);
+                canvas3.SetActive(false);
+                isCanvas1Shown = false;
+                isCanvas2Shown = false;
+                isCanvas3Shown = false;
             }
+            // Sinon, on affiche le premier canvas
             else
             {
-                firstCanvas.SetActive(true);
-                Cursor.lockState = CursorLockMode.None;
+                canvas1.SetActive(true);
+                canvas2.SetActive(false);
+                canvas3.SetActive(false);
+                isCanvas1Shown = true;
+                isCanvas2Shown = false;
+                isCanvas3Shown = false;
             }
         }
+    }
+
+    public void ShowCanvas1()
+    {
+        Debug.Log("show canvas 1");
+        if (!isCanvas1Shown)
+        {
+            canvas1.SetActive(true);
+            canvas2.SetActive(false);
+            canvas3.SetActive(false);
+            isCanvas1Shown = true;
+            isCanvas2Shown = false;
+            isCanvas3Shown = false;
+        }
+    }
+
+    public void ShowCanvas2()
+    {
+        if (!isCanvas2Shown)
+        {
+            canvas2.SetActive(true);
+            canvas1.SetActive(false);
+            canvas3.SetActive(false);
+            isCanvas1Shown = false;
+            isCanvas2Shown = true;
+            isCanvas3Shown = false;
+        }
+    }
+
+    public void ShowCanvas3()
+    {
+        if (!isCanvas3Shown)
+        {
+            canvas3.SetActive(true);
+            canvas1.SetActive(false);
+            canvas2.SetActive(false);
+            isCanvas1Shown = false;
+            isCanvas2Shown = false;
+            isCanvas3Shown = true;
+        }
+    }
+
+        public void HideCanvas1()
+    {
+        if (isCanvas1Shown)
+        {
+            canvas1.SetActive(false);
+            isCanvas1Shown = false;
+        }
+    }
+        public void LoadScene()
+    {
+        // Charger la scène correspondante au nom donné
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void LoadScene2()
+    {
+        // Charger la scène correspondante au nom donné
+        SceneManager.LoadScene(sceneName2);
+    }
+
+    public void LoadScene3()
+    {
+        // Charger la scène correspondante au nom donné
+        SceneManager.LoadScene(sceneName3);
+    }
+    public void LoadScene4()
+    {
+        // Charger la scène correspondante au nom donné
+        SceneManager.LoadScene(sceneName4);
     }
 
     public void QuitGame()
     {
+        // Quitter le jeu
         Application.Quit();
-    }
-
-    public void ShowFirstCanvas()
-    {
-        if (!isFirstCanvasShown)
-        {
-            firstCanvas.SetActive(true);
-            isFirstCanvasShown = true;
-            isSecondCanvasShown = false;
-            isThirdCanvasShown = false;
-        }
-    }
-
-    public void HideFirstCanvas()
-    {
-        if (isFirstCanvasShown)
-        {
-            firstCanvas.SetActive(false);
-            isFirstCanvasShown = false;
-        }
-    }
-
-    public void ShowSecondCanvas()
-    {
-        if (!isSecondCanvasShown)
-        {
-            secondCanvas.SetActive(true);
-            HideFirstCanvas();
-            HideThirdCanvas();
-            isFirstCanvasShown = false;
-            isSecondCanvasShown = true;
-            isThirdCanvasShown = false;
-        }
-    }
-
-    public void HideSecondCanvas()
-    {
-        if (isSecondCanvasShown)
-        {
-            secondCanvas.SetActive(false);
-            ShowFirstCanvas();
-            isFirstCanvasShown = true;
-            isSecondCanvasShown = false;
-            isThirdCanvasShown = false;
-        }
-    }
-
-    public void ShowThirdCanvas()
-    {
-        if (!isThirdCanvasShown)
-        {
-            thirdCanvas.SetActive(true);
-            HideFirstCanvas();
-            HideSecondCanvas();
-            isFirstCanvasShown = false;
-            isSecondCanvasShown = false;
-            isThirdCanvasShown = true;
-        }
-    }
-
-    public void HideThirdCanvas()
-    {
-        if (isThirdCanvasShown)
-        {
-            thirdCanvas.SetActive(false);
-            ShowFirstCanvas();
-            isFirstCanvasShown = true;
-            isSecondCanvasShown = false;
-            isThirdCanvasShown = false;
-        }
     }
 }
