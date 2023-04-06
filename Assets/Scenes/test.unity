@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15537223, g: 0.17746475, b: 0.19010514, a: 1}
+  m_IndirectSpecularColor: {r: 0.15537201, g: 0.17746438, b: 0.19010454, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1435,6 +1435,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -51.441
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 586ee4f1e6fcdc5409c4893cb2f76b31, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2daa5559ff3ceca439d60ff3e127fb4c, type: 2}
     - target: {fileID: 919132149155446097, guid: 586ee4f1e6fcdc5409c4893cb2f76b31, type: 3}
       propertyPath: m_Name
       value: cadre
@@ -1802,6 +1806,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6584068732379194423, guid: b958e337379c14b4cb0433c16b16566c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7611c578eff4ef14cae0155f145292c9, type: 2}
     - target: {fileID: 6584068732379194425, guid: b958e337379c14b4cb0433c16b16566c, type: 3}
       propertyPath: m_Name
       value: mur
