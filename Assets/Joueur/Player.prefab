@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 7956827865225567430}
   - component: {fileID: 7366212281937659756}
   - component: {fileID: 8532739563713389489}
-  - component: {fileID: 1767995002662216813}
-  - component: {fileID: 6147311464081024836}
+  - component: {fileID: 5371979244959944336}
+  - component: {fileID: 8509310222913040042}
   m_Layer: 0
-  m_Name: PlayerMeshe
+  m_Name: PlayerMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +118,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 90
   m_CollisionDetection: 0
---- !u!114 &1767995002662216813
+--- !u!114 &5371979244959944336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2455080658320697051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53239e9661f9b43169feb92bc4a481a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d10a85f91fbb47449e48729cd2a9c55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveUpKey: 122
@@ -147,7 +147,7 @@ MonoBehaviour:
   solidMask:
     serializedVersion: 2
     m_Bits: 0
---- !u!114 &6147311464081024836
+--- !u!114 &8509310222913040042
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2455080658320697051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98140657f3a54c44caceb6b8e35c168b, type: 3}
+  m_Script: {fileID: 11500000, guid: d145d823e38e747cfab2d5e9666bbd0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 3017688035951359143}
   - component: {fileID: 3017688035951359142}
   - component: {fileID: 3017688035951359141}
-  - component: {fileID: 3017688035951359160}
+  - component: {fileID: 4898894592577930470}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -283,7 +283,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3017688035951359140}
   m_Enabled: 1
---- !u!114 &3017688035951359160
+--- !u!114 &4898894592577930470
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3017688035951359140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1736345fd6d814246a6a8e92eaf81836, type: 3}
+  m_Script: {fileID: 11500000, guid: 105cbaeaed7ae40449a6414b0143a51c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
