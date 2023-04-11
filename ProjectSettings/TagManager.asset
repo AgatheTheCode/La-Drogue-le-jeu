@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bouton
   - Light
+  - porte2
   layers:
   - Default
   - TransparentFX
