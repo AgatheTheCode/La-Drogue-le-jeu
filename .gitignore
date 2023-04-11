@@ -76,6 +76,8 @@ ProjectSettings/
 
 #ignore .meta
 *.meta
+*.mat
+*/Textures/*
 Assets/.DS_Store
 
 .DS_Store
