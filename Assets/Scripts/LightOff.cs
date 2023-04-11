@@ -10,12 +10,21 @@ public class LightOff : MonoBehaviour
         lamp.enabled = isOn;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if (other.CompareTag("Light lamp"))
+        if (Input.GetMouseButtonDown(0))
         {
-            isOn = !isOn;
-            lamp.enabled = isOn;
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            {
+                Debug.Log(hit.collider.gameObject.name);
+                Debug.DrawRay(Camera.main.transform.position, hit.point - Camera.main.transform.position, Color.red, 1f);
+                if (hit.collider.CompareTag("Bouton"))
+                {
+                    isOn = !isOn;
+                    lamp.enabled = isOn;
+                }
+            }
         }
     }
 }
