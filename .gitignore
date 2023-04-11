@@ -76,3 +76,6 @@ ProjectSettings/
 
 #ignore .meta
 *.meta
+Assets/.DS_Store
+
+.DS_Store
