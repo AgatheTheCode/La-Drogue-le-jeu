@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.41372678, g: 0.43968067, b: 0.45181304, a: 1}
+  m_IndirectSpecularColor: {r: 0.41372752, g: 0.43968126, b: 0.45181382, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -442,6 +442,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6584068732379194422, guid: b958e337379c14b4cb0433c16b16566c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6584068732379194423, guid: b958e337379c14b4cb0433c16b16566c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -502,6 +506,10 @@ PrefabInstance:
     - target: {fileID: 6584068732379194421, guid: b958e337379c14b4cb0433c16b16566c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6584068732379194422, guid: b958e337379c14b4cb0433c16b16566c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6584068732379194425, guid: b958e337379c14b4cb0433c16b16566c, type: 3}
       propertyPath: m_Name
@@ -621,6 +629,10 @@ PrefabInstance:
     - target: {fileID: 6584068732379194421, guid: b958e337379c14b4cb0433c16b16566c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6584068732379194422, guid: b958e337379c14b4cb0433c16b16566c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6584068732379194425, guid: b958e337379c14b4cb0433c16b16566c, type: 3}
       propertyPath: m_Name
@@ -768,6 +780,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5642653053523506278, guid: 28ca0977882be4259840a44512a6286d, type: 3}
   m_PrefabInstance: {fileID: 1348930307}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1389225566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4219806907406716202, guid: 24f5387bfac7f4c40b7728770586cd04, type: 3}
+  m_PrefabInstance: {fileID: 55438461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1389225567
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389225566}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1397299623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1240,10 +1270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105cbaeaed7ae40449a6414b0143a51c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
-  player: {fileID: 1732687029}
-  maxAngle: 90
-  minAngle: -90
 --- !u!114 &1732687040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1256,23 +1282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d10a85f91fbb47449e48729cd2a9c55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveUpKey: 122
-  moveDownKey: 115
-  moveLeftKey: 113
-  moveRightKey: 100
-  jumpKey: 32
-  sprintKey: 304
-  joystickHorizontalAxis: Horizontal
-  joystickVerticalAxis: Vertical
-  joystickJumpButton: Jump
-  joystickSprintButton: Fire3
-  speed: 5
-  sprintSpeed: 10
-  jumpHeight: 2
-  edgeDistance: 1
-  solidMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1001 &1857145595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1323,6 +1332,10 @@ PrefabInstance:
     - target: {fileID: 6584068732379194421, guid: b958e337379c14b4cb0433c16b16566c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6584068732379194422, guid: b958e337379c14b4cb0433c16b16566c, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6584068732379194425, guid: b958e337379c14b4cb0433c16b16566c, type: 3}
       propertyPath: m_Name

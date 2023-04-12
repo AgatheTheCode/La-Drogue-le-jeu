@@ -202,9 +202,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 658f380b7dd34e44abf915bbd9419e7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scene2: 
-  Salle_3: Scene2
-  Scene4: 
+  Scene2: Scene2
+  Salle_3: Salle_3
+  Scene4: Scene4
+--- !u!65 &124867848
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124867845}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.7507014, z: 1.969724}
+  m_Center: {x: 0, y: 0.87535095, z: 0.077931665}
+--- !u!64 &124867850
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124867845}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &162509395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -562,6 +589,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 3.36
       objectReference: {fileID: 0}
+    - target: {fileID: 7366212281937659756, guid: 53f1db1a9136c4066a514b5bf5a6f64c, type: 3}
+      propertyPath: m_Height
+      value: 2.546234
+      objectReference: {fileID: 0}
+    - target: {fileID: 7366212281937659756, guid: 53f1db1a9136c4066a514b5bf5a6f64c, type: 3}
+      propertyPath: m_Radius
+      value: 0.70396465
+      objectReference: {fileID: 0}
+    - target: {fileID: 7366212281937659756, guid: 53f1db1a9136c4066a514b5bf5a6f64c, type: 3}
+      propertyPath: m_Center.x
+      value: 0.0025135274
+      objectReference: {fileID: 0}
+    - target: {fileID: 7366212281937659756, guid: 53f1db1a9136c4066a514b5bf5a6f64c, type: 3}
+      propertyPath: m_Center.y
+      value: -0.08676469
+      objectReference: {fileID: 0}
+    - target: {fileID: 7366212281937659756, guid: 53f1db1a9136c4066a514b5bf5a6f64c, type: 3}
+      propertyPath: m_Center.z
+      value: -0.07116872
+      objectReference: {fileID: 0}
     - target: {fileID: 8532739563713389489, guid: 53f1db1a9136c4066a514b5bf5a6f64c, type: 3}
       propertyPath: m_Constraints
       value: 80
@@ -574,7 +621,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29800
+  m_Name: pb_Mesh24928
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
