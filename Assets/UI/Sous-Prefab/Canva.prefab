@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 7653453496586066514}
   - component: {fileID: 7653453496586066525}
   - component: {fileID: 7653453496586066524}
+  - component: {fileID: 5327878662732290936}
   - component: {fileID: 7653453496586066527}
   m_Layer: 3
   m_Name: Canva
@@ -160,6 +161,21 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!114 &5327878662732290936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7653453496586066526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b450496770eca714c9256b1571386c4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas1: {fileID: 4664655111590037986, guid: 70295e58bccc24699b8d06f40ccbe708, type: 3}
+  canvas2: {fileID: 0}
+  canvas3: {fileID: 0}
 --- !u!114 &7653453496586066527
 MonoBehaviour:
   m_ObjectHideFlags: 0

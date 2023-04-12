@@ -88,6 +88,57 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+--- !u!114 &8807461948195217598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2455080658320697051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8701b7538eafd7543b6c77bc22eebf8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveUpKey: 122
+  moveDownKey: 115
+  moveLeftKey: 113
+  moveRightKey: 100
+  jumpKey: 32
+  sprintKey: 304
+  joystickHorizontalAxis: Horizontal
+  joystickVerticalAxis: Vertical
+  joystickJumpButton: Jump
+  joystickSprintButton: Fire3
+  speed: 5
+  sprintSpeed: 10
+  jumpHeight: 2
+  edgeDistance: 1
+  solidMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &1680364746395132245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2455080658320697051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a878a8fc222ad424d99836cfbf3307d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  sprintSpeed: 10
+  jumpHeight: 2
+  edgeDistance: 1
+  solidMask:
+    serializedVersion: 2
+    m_Bits: 0
+>>>>>>> Stashed changes
 --- !u!136 &7366212281937659756
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -208,6 +259,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3017688035951359143}
   - component: {fileID: 3017688035951359142}
+<<<<<<< Updated upstream
+=======
+  - component: {fileID: 5916801004463137900}
+>>>>>>> Stashed changes
   - component: {fileID: 3017688035951359141}
   - component: {fileID: 4898894592577930470}
   m_Layer: 0
@@ -275,6 +330,25 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+<<<<<<< Updated upstream
+=======
+--- !u!114 &5916801004463137900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3017688035951359140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 994653d7a1096694097ad200b91d512a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensitivity: 100
+  player: {fileID: 6466157546837598587}
+  maxAngle: 90
+  minAngle: -90
+>>>>>>> Stashed changes
 --- !u!81 &3017688035951359141
 AudioListener:
   m_ObjectHideFlags: 0
