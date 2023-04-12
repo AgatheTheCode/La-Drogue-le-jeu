@@ -185,6 +185,26 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
   m_PVRTiledBaking: 0
+--- !u!1 &124867845 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f5ea54a6559b0914986478cdd0af4ddd, type: 3}
+  m_PrefabInstance: {fileID: 162509395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &124867847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124867845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 658f380b7dd34e44abf915bbd9419e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scene2: 
+  Salle_3: Scene2
+  Scene4: 
 --- !u!1001 &162509395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -295,6 +315,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f5ea54a6559b0914986478cdd0af4ddd, type: 3}
       propertyPath: m_Name
       value: porte
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f5ea54a6559b0914986478cdd0af4ddd, type: 3}
+      propertyPath: m_TagString
+      value: porte1
       objectReference: {fileID: 0}
     - target: {fileID: 3316992658331686828, guid: f5ea54a6559b0914986478cdd0af4ddd, type: 3}
       propertyPath: m_LocalScale.x
@@ -530,6 +554,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.028
       objectReference: {fileID: 0}
+    - target: {fileID: 3332812887488484386, guid: 53f1db1a9136c4066a514b5bf5a6f64c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1550885748}
     - target: {fileID: 6466157546837598587, guid: 53f1db1a9136c4066a514b5bf5a6f64c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.36
@@ -546,7 +574,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh73038
+  m_Name: pb_Mesh29800
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -871,6 +899,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 5.509, z: 0}
+--- !u!4 &1550885748 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6466157546837598587, guid: 53f1db1a9136c4066a514b5bf5a6f64c, type: 3}
+  m_PrefabInstance: {fileID: 654573968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1624077045
 PrefabInstance:
   m_ObjectHideFlags: 0
