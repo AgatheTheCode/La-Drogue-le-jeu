@@ -63,8 +63,6 @@ SyntyStudios
 
 # Crashlytics generated file
 crashlytics-build.properties
-#ignore le dossier texture
-#Assets/Textures/
 #ignore usersettings
 UserSettings/
 ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json
@@ -74,10 +72,10 @@ ProjectSettings/Packages/com.unity.probuilder/
 
 ProjectSettings/
 
-#ignore .meta
-*.meta
-*.mat
-*/Textures/*
 Assets/.DS_Store
 
 .DS_Store
+
+Assets/ProBuilder Data/
+
+Packages/
