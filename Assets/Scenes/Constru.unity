@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.007590646, g: 0.0019961307, b: 0.00029979297, a: 1}
+  m_IndirectSpecularColor: {r: 0.007590636, g: 0.0019961277, b: 0.0002997918, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1576,11 +1576,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3017688035951359140, guid: 53f1db1a9136c4066a514b5bf5a6f64c, type: 3}
   m_PrefabInstance: {fileID: 1337439507}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &251007586 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3017688035951359143, guid: 53f1db1a9136c4066a514b5bf5a6f64c, type: 3}
-  m_PrefabInstance: {fileID: 1337439507}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &251007587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1593,54 +1588,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 251007586}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 1
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
 --- !u!1001 &282150862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6645,21 +6592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca002da428252441b92f28d83c8a65f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Shape:
-    rid: 9217764783880667138
-  m_Size: {x: -11.993616, y: 0.55170804, z: -4.1047354}
-  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
-  m_PivotLocation: 0
-  m_PivotPosition: {x: 0, y: 0, z: 0}
-  m_UnmodifiedMeshVersion: 4637
-  m_ShapeBox:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 5.996808, y: 0.27585402, z: 2.0523677}
-  references:
-    version: 2
-    RefIds:
-    - rid: 9217764783880667138
-      type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
 --- !u!114 &1212660949
 MonoBehaviour:
   m_ObjectHideFlags: 0
