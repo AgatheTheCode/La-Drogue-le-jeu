@@ -18,10 +18,10 @@ MonoBehaviour:
     value: 1
   mode:
     overrideState: 1
-    value: 1
+    value: 0
   intensity:
     overrideState: 1
-    value: 0.85
+    value: 0.99
   color:
     overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -48,7 +48,7 @@ MonoBehaviour:
     value: 0.25
   quality:
     overrideState: 1
-    value: 2
+    value: 4
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 0
+    value: 1
   shutterAngle:
     overrideState: 1
     value: 270
@@ -109,7 +109,7 @@ MonoBehaviour:
     value: 0
   intensity:
     overrideState: 1
-    value: 0.505
+    value: 0.305
   size:
     overrideState: 1
     value: 0.3
