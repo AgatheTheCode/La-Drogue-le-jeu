@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - switch
-  - switched
+  - Bouton
+  - Light
+  - porte2
   layers:
   - Default
   - TransparentFX
