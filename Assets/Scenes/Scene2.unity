@@ -563,6 +563,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3332812887488484386, guid: 53f1db1a9136c4066a514b5bf5a6f64c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2076854361}
     - target: {fileID: 8532739563713389489, guid: 53f1db1a9136c4066a514b5bf5a6f64c, type: 3}
       propertyPath: m_Constraints
       value: 80
@@ -12844,6 +12848,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2076854361 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6466157546837598587, guid: 53f1db1a9136c4066a514b5bf5a6f64c, type: 3}
+  m_PrefabInstance: {fileID: 140653188}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2089624483
 GameObject:
   m_ObjectHideFlags: 0
@@ -12909,7 +12918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 658f380b7dd34e44abf915bbd9419e7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Salle_3
+  Salle_3: Salle_3
 --- !u!65 &2097944261
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13721,7 +13730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lamp: {fileID: 1276559328}
-  isOn: 1
+  isOn: 0
 --- !u!64 &7202271455613965482
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    public string sceneToLoad; // Le nom de la scène à charger
+    public string Salle_3; // Le nom de la scène à charger
 
     // Méthode appelée lorsque le joueur clique sur l'objet avec le bouton gauche de la souris
     private void OnMouseDown()
@@ -13,7 +13,7 @@ public class SceneSwitcher : MonoBehaviour
             {
                 if (hit.collider.CompareTag("porte2")) // Vérifie si l'objet a le tag "porte"
         {
-            SceneManager.LoadScene(sceneToLoad); // Charge la scène spécifiée
+            SceneManager.LoadScene(Salle_3); // Charge la scène spécifiée
         }
             }
     }
