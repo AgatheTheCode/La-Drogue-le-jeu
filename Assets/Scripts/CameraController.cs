@@ -26,7 +26,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         // Rendre le curseur invisible et verrouiller sa position
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
